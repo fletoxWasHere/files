@@ -16,15 +16,15 @@ var corsOptions = {
 app.use(cors(corsOptions));
 
 
-app.use(express.static(__dirname + "/public/coreConfig/simpleOscillatorConfig.json"));
+app.use(express.static(__dirname + "/public"));
 
 
 
-app.get('/coreConfig/simpleOscillatorConfig', (req, res) => {
-    res.sendFile(path.join(__dirname + "/public/coreConfig/simpleOscillatorConfig.json"));
+app.get('/coreConfig/:name', (req, res) => {
+    res.sendFile(path.join(__dirname + `/public/coreConfig/${req.params.name}`));
 })
 app.get('/wamsConfig/:name', (req, res) => {
-    res.sendFile(path.join(__dirname + `/public/wamsConfig/${req.params.name}.json`));
+    res.sendFile(path.join(__dirname + `/public/wamsConfig/${req.params.name}`));
 })
 
 app.listen(port, () => {
