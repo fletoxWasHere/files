@@ -18,7 +18,12 @@ var corsOptions = {
 app.use(cors(corsOptions));
 
 app.use(express.static(__dirname + "/public"));
-
+// Middleware to set headers for all responses
+app.use((req, res, next) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
+    next();
+});
 app.get('/coreConfig/:name', (req, res) => {
   const filePath = path.join(__dirname, `/public/coreConfig/${req.params.name}.json`);
   fs.readFile(filePath, 'utf8', (err, data) => {
