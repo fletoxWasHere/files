@@ -11,7 +11,7 @@ const port = 3000
 // __dirname est le répertoire courant
 
 var corsOptions = {
-    origin: ["https://0.0.0.0:5173","http://0.0.0.0:5173","https://musical-multiverse-vr-1.onrender.com","http://localhost:517","https://localhost:5173","https://192.168.122.110:5173","https://192.168.200.110:5173"],
+    origin: ["https://0.0.0.0:5173","http://0.0.0.0:5173","https://musical-multiverse-vr-1.onrender.com","http://localhost:517","https://localhost:5173","https://192.168.122.110:5173","https://192.168.200.110:5173","https://musical-metaverse.onrender.com"],
     optionsSuccessStatus: 200 // For legacy browser support
     }
     
