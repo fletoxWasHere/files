@@ -6,7 +6,7 @@ const fs = require('node:fs');
 const app = express()
 
 
-const port = 3000
+const port = 3002
 // Serve only the static files form the dist directory
 // __dirname est le répertoire courant
 
