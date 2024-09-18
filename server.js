@@ -6,18 +6,19 @@ const fs = require('node:fs');
 const app = express()
 
 
-const port = 3002
+const port = 3000
 // Serve only the static files form the dist directory
 // __dirname est le répertoire courant
 
 var corsOptions = {
     origin: ["https://0.0.0.0:5173","http://0.0.0.0:5173",
       "https://musical-multiverse-vr-1.onrender.com","http://localhost:517","https://localhost:5173",
-      "https://192.168.122.110:5173","https://192.168.200.110:5173","https://musical-metaverse.onrender.com","*"
+      "https://192.168.122.110:5173","https://192.168.200.110:5173","https://musical-metaverse.onrender.com","https://moustik.dev"
     ],
     optionsSuccessStatus: 200 // For legacy browser support
     }
-    
+
+
 app.use(cors(corsOptions));
 
 app.use(express.static(__dirname + "/public"));
